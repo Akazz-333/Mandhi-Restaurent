@@ -3985,9 +3985,19 @@ body.theme-light .btn-fill:hover {
 
 /* --- Smartphones & Small Mobile Viewports (max-width: 640px) --- */
 @media (max-width: 640px) {
-  /* Hide heavy 3D Showcase section on mobile so menu is immediately visible */
+  /* 3D Showcase section styling for mobile */
   #sec-showcase {
-    display: none !important;
+    display: block !important;
+    height: auto !important;
+    padding: 10px 0 !important;
+    overflow: hidden !important;
+  }
+
+  #mh-circular-gallery-wrap {
+    height: 260px !important;
+    margin: 10px auto !important;
+    border: none !important;
+    background: transparent !important;
   }
 
   /* Section Spacing - Ultra-Compact & Clean */
