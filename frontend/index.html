@@ -1195,11 +1195,12 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
           this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
         }
       }
-      this.scale = this.screen.height / 1500;
+      const mobileFactor = (this.screen.width < 768) ? 0.46 : 1.0;
+      this.scale = (this.screen.height / 1500) * mobileFactor;
       this.plane.scale.y = (this.viewport.height * (680 * this.scale)) / this.screen.height;
       this.plane.scale.x = (this.viewport.width * (520 * this.scale)) / this.screen.width;
       this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
-      this.padding = 1.7;
+      this.padding = (this.screen.width < 768) ? 1.0 : 1.7;
       this.width = this.plane.scale.x + this.padding;
       this.widthTotal = this.width * this.length;
       this.x = this.width * this.index;
@@ -1502,7 +1503,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
         { image: 'images/shawaya-mandi.jpg', text: 'Shawaya Mandi' }
       ];
 
-      resolveFont('bold 30px Cormorant Garamond', null).then(resolvedFont => {
+      resolveFont(window.innerWidth < 768 ? 'bold 18px Cormorant Garamond' : 'bold 30px Cormorant Garamond', null).then(resolvedFont => {
         new App(container, {
           items,
           bend: 3,
