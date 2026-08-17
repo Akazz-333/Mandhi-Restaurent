@@ -15,6 +15,11 @@ import java.nio.charset.StandardCharsets;
 @CrossOrigin(origins = "*")
 public class MenuController {
 
+    @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("{\"status\":\"UP\",\"service\":\"Mandhi House REST API Server\",\"version\":\"1.0.0\"}");
+    }
+
     @GetMapping(value = "/menu", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getMenu() {
         try {
