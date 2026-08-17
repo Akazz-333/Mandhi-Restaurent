@@ -1574,6 +1574,17 @@ body.theme-emerald {
     padding-right: 0 !important;
     box-sizing: border-box !important;
   }
+  .category-nav-container::-webkit-scrollbar,
+  .category-pills::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  .category-nav-container,
+  .category-pills {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
   .category-pills {
     display: flex !important;
     justify-content: flex-start !important;

@@ -6,7 +6,7 @@
 <title>Mandhi House — Order Online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="Mandhi.css?v=1.0.8">
+<link rel="stylesheet" href="Mandhi.css?v=1.0.9">
 <style>
   @media (max-width: 768px) {
     .mh-category-tabs-container {
@@ -24,6 +24,18 @@
       margin: 0 !important;
       padding-right: 0 !important;
       box-sizing: border-box !important;
+    }
+    /* Hide scrollbars on mobile category tabs while keeping them scrollable */
+    .category-nav-container::-webkit-scrollbar,
+    .category-pills::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+    .category-nav-container,
+    .category-pills {
+      -ms-overflow-style: none !important;
+      scrollbar-width: none !important;
     }
     .mh-category-tabs-container .mh-search {
       position: relative !important;
