@@ -1615,10 +1615,10 @@ body.theme-emerald {
   font-weight: 700;
 }
 
-/* Scroll Reveal Animations */
+/* Scroll Reveal Animations - Default to Visible to prevent blank screens */
 .reveal-hidden {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal-active {
@@ -3967,6 +3967,15 @@ body.theme-light .btn-fill:hover {
     min-height: auto !important;
     overflow: visible !important;
     touch-action: pan-y !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .reveal-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
   }
 
   .ambient, #mh-ambient, .mh-aurora, .overlay-catch:not(.active) {
