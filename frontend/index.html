@@ -1535,31 +1535,25 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
   }
 
   const RAW_MENU = [
-    // --- AL FAHM ---
-    { id: 0, category: "alfahm", name: "Peri Peri Al Fahm", price: 240, desc: "Grilled chicken coated in fiery peri-peri spices.", longDesc: "Fresh chicken quarters marinated in a hot African bird's eye chili and citrus herb blend, flame-grilled over burning wood coals." },
-    { id: 1, category: "alfahm", name: "Al Fahm", price: 220, desc: "Classic Arabic spiced grilled chicken over charcoal.", longDesc: "Traditional Arab-style grilled chicken rubbed with warm spices, garlic, yogurt, and olive oil, slowly roasted over charcoal." },
-    { id: 2, category: "alfahm", name: "Green Chilli Al Fahm", price: 230, desc: "Mint-and-green-chilli marinated roasted chicken.", longDesc: "Succulent chicken marinated in a vibrant paste of green chilies, fresh mint, coriander, and Arabic spices, grilled for a spicy finish." },
-    { id: 3, category: "alfahm", name: "Shawaya", price: 210, desc: "Spit-roasted chicken with Middle Eastern dry spices.", longDesc: "Rotisserie spit-roasted chicken with crispy golden skin, seasoned with coriander, cumin, black pepper, and garlic, served juicy." },
-    { id: 4, category: "alfahm", name: "Turkish Al Fahm", price: 250, desc: "Creamy garlic and Turkish herb infused grilled chicken.", longDesc: "Chicken marinated in yogurt, garlic, lemon, and warm Turkish spices (sumac, pul biber), grilled for a rich, aromatic crust." },
-    { id: 5, category: "alfahm", name: "Honey Chilli Al Fahm", price: 240, desc: "Charcoal chicken glazed with sticky sweet-spicy honey.", longDesc: "Yemeni-spiced grilled chicken finished on the griddle with a sticky glaze of organic honey and crushed red chilies." },
+    // --- VEG AL FAHM ---
+    { id: 0, category: "alfahm", name: "Peri Peri Paneer Al Fahm", price: 240, desc: "Charcoal-grilled cottage cheese slabs in fiery peri-peri spices.", longDesc: "Fresh paneer blocks marinated in a hot African bird's eye chili and citrus herb blend, flame-grilled over burning wood coals." },
+    { id: 1, category: "alfahm", name: "Paneer Al Fahm", price: 220, desc: "Classic Arabic spiced grilled paneer over charcoal.", longDesc: "Traditional Arab-style grilled cottage cheese rubbed with warm Yemeni spices, garlic, yogurt, and olive oil, slowly roasted over charcoal." },
+    { id: 2, category: "alfahm", name: "Green Chilli Paneer Al Fahm", price: 230, desc: "Mint-and-green-chilli marinated roasted paneer.", longDesc: "Succulent paneer marinated in a vibrant paste of green chilies, fresh mint, coriander, and Arabic spices, grilled for a spicy finish." },
+    { id: 3, category: "alfahm", name: "Mushroom Al Fahm", price: 210, desc: "Charcoal-roasted jumbo button mushrooms with Arabic spices.", longDesc: "Jumbo button mushrooms marinated in garlic, yogurt, lemon, and warm Arabic spices, grilled over wood coals until tender." },
+    { id: 4, category: "alfahm", name: "Turkish Veg Al Fahm", price: 250, desc: "Creamy garlic and Turkish herb infused grilled vegetables & paneer.", longDesc: "Fresh broccoli, baby corn, and paneer marinated in yogurt, garlic, lemon, and warm Turkish sumac, grilled over charcoal." },
+    { id: 5, category: "alfahm", name: "Honey Chilli Paneer Al Fahm", price: 240, desc: "Charcoal paneer glazed with sticky sweet-spicy honey.", longDesc: "Yemeni-spiced grilled paneer finished on the griddle with a sticky glaze of organic honey and crushed red chilies." },
 
-    // --- MANDHI ---
-    { id: 6, category: "mandhi", name: "Chicken Mandi", price: 200, desc: "Basmati under slow-cooked chicken, smoked over coal.", longDesc: "Whole chicken quarters, slow-smoked over coal, laid over basmati rice cooked in the same drippings. Finished with fried onion and a squeeze of lime." },
-    { id: 7, category: "mandhi", name: "Shawaya Mandi", price: 250, desc: "Spit-roasted shawaya chicken over spiced Mandi rice.", longDesc: "Traditional spit-roasted spiced chicken served over a bed of slow-cooked long-grain Mandi basmati rice." },
-    { id: 8, category: "mandhi", name: "Chicken Madfoon", price: 260, desc: "Tender pit-buried and slow-baked chicken.", longDesc: "Chicken quarters buried underground in the madfoon pit and slow-baked in their own juices for rich tenderness." },
-    { id: 9, category: "mandhi", name: "Al Fahm Mandi", price: 240, desc: "Charcoal-grilled classic Al Fahm chicken over Mandi rice.", longDesc: "Traditional herb-and-spice rubbed grilled Al Fahm chicken served over a bed of slow-cooked Mandi rice." },
-    { id: 10, category: "mandhi", name: "Green Chilli Al Fahm Mandi", price: 260, desc: "Green chilli grilled chicken over fragrant rice.", longDesc: "Zesty green chilli and mint marinated grilled chicken served over slow-cooked Mandi rice." },
-    { id: 11, category: "mandhi", name: "Peri Peri Al Fahm Mandi", price: 270, desc: "Spicy Portuguese-African chicken over Mandi rice.", longDesc: "Fiery peri-peri spice rubbed grilled chicken quarters served on a hot bed of fragrant Mandi rice." },
-    { id: 12, category: "mandhi", name: "Honey Chilli Al Fahm Mandi", price: 270, desc: "Sweet-spicy glazed grilled chicken over Mandi rice.", longDesc: "Grilled chicken quarters glazed with a sticky honey-chilli sauce, served over aromatic Mandi rice." },
-    { id: 13, category: "mandhi", name: "Turkish Al Fahm Mandi", price: 280, desc: "Yogurt-marinated Turkish spiced chicken over Mandi rice.", longDesc: "Creamy garlic and Turkish herb-marinated grilled chicken served over a bed of slow-cooked Mandi rice." },
-    { id: 14, category: "mandhi", name: "Grilled Mutton Mandi", price: 420, desc: "Charcoal-grilled tender mutton over Mandi rice.", longDesc: "Succulent bone-in mutton pieces, flame-grilled and served over a bed of rich, spice-infused Mandi rice." },
-    { id: 15, category: "mandhi", name: "Grilled Beef Mandi", price: 320, desc: "Charcoal-grilled tender beef chunks over Mandi rice.", longDesc: "Tender beef chunks, charcoal-grilled and seasoned, served over a bed of slow-cooked Mandi rice." },
-    { id: 16, category: "mandhi", name: "Mandi Rice", price: 100, desc: "Plain, fragrant, slow-cooked Mandi basmati rice.", longDesc: "A generous plate of our signature long-grain basmati rice, slow-cooked with ghee and Yemeni spices." },
-    { id: 17, category: "mandhi", name: "Beef Mandi", price: 300, desc: "Slow-roasted tender beef, cardamom rice.", longDesc: "Beef cuts slow-roasted until tender, layered over cardamom-and-clove rice, finished with toasted nuts and raisins." },
-    { id: 18, category: "mandhi", name: "Mutton Mandi", price: 400, desc: "Falling-off-bone mutton, hakawi rice beneath.", longDesc: "Bone-in mutton, slow-cooked until it falls off the bone, resting on a bed of hakawi rice soaked in the meat's own stock." },
-    { id: 19, category: "mandhi", name: "Mutton Madfoon", price: 450, desc: "Pit-buried mutton, deep smoked flavour.", longDesc: "Mutton buried and slow-baked underground in the traditional madfoon style, carrying a deep, earthy smoke through every bite." },
-    { id: 20, category: "mandhi", name: "Beef Madfoon", price: 310, desc: "Earth-pit beef, rich and deeply smoked.", longDesc: "Beef slow-baked in the earthen madfoon pit, giving it a rich, deeply smoked character unlike any oven can produce." },
-    { id: 21, category: "mandhi", name: "Fish Mandi", price: 350, desc: "Whole spiced fish over lemon-scented rice.", longDesc: "A whole fish rubbed with Yemeni spice and slow-roasted, served whole over lemon-scented rice with a side of hot sauce." },
+    // --- VEG MANDHI ---
+    { id: 6, category: "mandhi", name: "Paneer Mandi", price: 220, desc: "Basmati under slow-cooked spiced paneer, smoked over coal.", longDesc: "Tender grilled paneer tikka, slow-smoked over coal, laid over long-grain basmati rice cooked with cardamom and Yemeni spices." },
+    { id: 7, category: "mandhi", name: "Mushroom Mandi", price: 210, desc: "Smoked spiced mushrooms over fragrant Mandi rice.", longDesc: "Slow-roasted spiced jumbo mushrooms served over a bed of slow-cooked long-grain Mandi basmati rice with fried onions and raisins." },
+    { id: 8, category: "mandhi", name: "Veg Madfoon", price: 230, desc: "Underground pit slow-baked spiced vegetables & paneer.", longDesc: "Fresh vegetables and paneer blocks buried underground in the earthen madfoon pit and slow-baked in their own juices for rich tenderness." },
+    { id: 9, category: "mandhi", name: "Paneer Al Fahm Mandi", price: 240, desc: "Charcoal-grilled Al Fahm paneer over Mandi rice.", longDesc: "Traditional herb-and-spice rubbed grilled Al Fahm paneer served over a bed of slow-cooked Mandi rice." },
+    { id: 10, category: "mandhi", name: "Green Chilli Paneer Mandi", price: 250, desc: "Green chilli grilled paneer over fragrant rice.", longDesc: "Zesty green chilli and mint marinated grilled paneer served over slow-cooked Mandi basmati rice." },
+    { id: 11, category: "mandhi", name: "Peri Peri Paneer Mandi", price: 250, desc: "Spicy peri-peri grilled paneer over Mandi rice.", longDesc: "Fiery peri-peri spice rubbed grilled paneer slabs served on a hot bed of fragrant Mandi rice." },
+    { id: 12, category: "mandhi", name: "Honey Chilli Paneer Mandi", price: 250, desc: "Sweet-spicy glazed grilled paneer over Mandi rice.", longDesc: "Grilled paneer glazed with a sticky honey-chilli sauce, served over aromatic Mandi rice." },
+    { id: 13, category: "mandhi", name: "Turkish Veg Mandi", price: 260, desc: "Yogurt-marinated Turkish spiced veggies & paneer over rice.", longDesc: "Creamy garlic and Turkish herb-marinated grilled paneer and broccoli served over a bed of slow-cooked Mandi rice." },
+    { id: 14, category: "mandhi", name: "Mixed Veg Mandi", price: 190, desc: "Garden-fresh spiced vegetables slow-cooked with basmati rice.", longDesc: "A vibrant blend of carrots, green peas, baby corn, and potatoes slow-cooked with ghee and Yemeni spices over cardamom rice." },
+    { id: 15, category: "mandhi", name: "Mandi Rice", price: 100, desc: "Plain, fragrant, slow-cooked Mandi basmati rice.", longDesc: "A generous plate of our signature long-grain basmati rice, slow-cooked with ghee and Yemeni spices." },
 
     // --- SHAKES ---
     { id: 22, category: "shakes", name: "Galaxy Shake", price: 140, desc: "Creamy blend with rich Galaxy chocolate.", longDesc: "A premium, velvety milkshake made with blended Galaxy milk chocolate, fresh cream, and vanilla ice cream." },
@@ -1783,7 +1777,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
                 ${imgWithFallback(m.cardImage, m.name)}
               </div>
               <div class="card-body">
-                <span class="badge">${catLabel}</span>
+                <span class="badge" style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.35); font-weight: 700; display: inline-flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#22c55e; box-shadow:0 0 6px #22c55e;"></span> 100% VEG • ${catLabel}</span>
                 <h3>${m.name}</h3>
                 <p class="desc">${m.desc}</p>
                 <div class="foot">
