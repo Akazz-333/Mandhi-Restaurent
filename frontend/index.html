@@ -6,7 +6,44 @@
 <title>Mandhi House — Order Online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="Mandhi.css?v=1.0.4">
+<link rel="stylesheet" href="Mandhi.css?v=1.0.5">
+<style>
+  @media (max-width: 768px) {
+    .mh-category-tabs-container {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      position: relative !important;
+      margin-bottom: 25px !important;
+    }
+    .category-nav-container {
+      flex: 1 !important;
+      min-width: 0 !important;
+      margin: 0 !important;
+      padding-right: 50px !important;
+      box-sizing: border-box !important;
+    }
+    .mh-category-tabs-container .mh-search {
+      position: absolute !important;
+      right: 0 !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      margin: 0 !important;
+      z-index: 20 !important;
+    }
+    .mh-category-tabs-container .mh-search:focus-within,
+    .mh-category-tabs-container .mh-search.open {
+      position: absolute !important;
+      right: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      z-index: 30 !important;
+    }
+  }
+</style>
 </head>
 <body>
 <div id="mandhi-root">
