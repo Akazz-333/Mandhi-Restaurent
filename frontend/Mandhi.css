@@ -3946,6 +3946,34 @@ body.theme-light .btn-fill:hover {
   }
 }
 
+/* =========================================================
+   UNIVERSAL MOBILE SMOOTH TOUCH SCROLL UNLOCK SYSTEM
+   ========================================================= */
+@media (max-width: 900px) {
+  html, body, #mandhi-root, .wrap {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    scroll-snap-type: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  .mh-section {
+    scroll-snap-align: none !important;
+    scroll-snap-stop: none !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    touch-action: pan-y !important;
+  }
+
+  .ambient, #mh-ambient, .mh-aurora, .overlay-catch:not(.active) {
+    pointer-events: none !important;
+  }
+}
+
 /* --- Smartphones & Small Mobile Viewports (max-width: 640px) --- */
 @media (max-width: 640px) {
   /* Hide heavy 3D Showcase section on mobile so menu is immediately visible */
