@@ -3949,8 +3949,8 @@ body.theme-light .btn-fill:hover {
   }
 
   .about-widgets-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 16px !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
 }
 
