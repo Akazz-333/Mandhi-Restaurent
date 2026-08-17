@@ -1161,7 +1161,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
         const effectiveX = Math.min(Math.abs(x), H);
 
         const arc = R - Math.sqrt(R * R - effectiveX * effectiveX);
-        const yOffset = (this.screen.width < 768) ? 0.05 : 0.3;
+        const yOffset = (this.screen.width < 768) ? 0.08 : 0.3;
         if (this.bend > 0) {
           this.plane.position.y = -arc + yOffset; // Offset up slightly to center the dome vertical profile
           this.plane.rotation.z = -Math.sign(x) * Math.asin(effectiveX / R);
@@ -1196,12 +1196,12 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
           this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
         }
       }
-      const mobileFactor = (this.screen.width < 768) ? 0.38 : 1.0;
+      const mobileFactor = (this.screen.width < 768) ? 0.58 : 1.0;
       this.scale = (this.screen.height / 1500) * mobileFactor;
       this.plane.scale.y = (this.viewport.height * (680 * this.scale)) / this.screen.height;
       this.plane.scale.x = (this.viewport.width * (520 * this.scale)) / this.screen.width;
       this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
-      this.padding = (this.screen.width < 768) ? 1.35 : 1.7;
+      this.padding = (this.screen.width < 768) ? 1.55 : 1.7;
       this.width = this.plane.scale.x + this.padding;
       this.widthTotal = this.width * this.length;
       this.x = this.width * this.index;
@@ -1504,7 +1504,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
         { image: 'images/shawaya-mandi.jpg', text: 'Shawaya Mandi' }
       ];
 
-      resolveFont(window.innerWidth < 768 ? 'bold 18px Cormorant Garamond' : 'bold 30px Cormorant Garamond', null).then(resolvedFont => {
+      resolveFont(window.innerWidth < 768 ? 'bold 22px Cormorant Garamond' : 'bold 30px Cormorant Garamond', null).then(resolvedFont => {
         new App(container, {
           items,
           bend: window.innerWidth < 768 ? 1.0 : 3.0,
