@@ -1195,7 +1195,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
           this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
         }
       }
-      const mobileFactor = (this.screen.width < 768) ? 0.35 : 1.0;
+      const mobileFactor = (this.screen.width < 768) ? 0.48 : 1.0;
       this.scale = (this.screen.height / 1500) * mobileFactor;
       this.plane.scale.y = (this.viewport.height * (680 * this.scale)) / this.screen.height;
       this.plane.scale.x = (this.viewport.width * (520 * this.scale)) / this.screen.width;
