@@ -4032,7 +4032,7 @@ body.theme-light .btn-fill:hover {
   /* 4. 3D Showcase Circular Gallery */
   #sec-showcase {
     display: block !important;
-    padding: 10px 0 !important;
+    padding: 0 !important;
     height: auto !important;
     min-height: auto !important;
     opacity: 1 !important;
@@ -4040,7 +4040,7 @@ body.theme-light .btn-fill:hover {
   }
 
   #mh-circular-gallery-wrap {
-    height: 280px !important;
+    height: 200px !important;
     margin: 0 auto !important;
     border: none !important;
     background: transparent !important;
