@@ -1195,12 +1195,12 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
           this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
         }
       }
-      const mobileFactor = (this.screen.width < 768) ? 0.48 : 1.0;
-      this.scale = (this.screen.height / 1500) * mobileFactor;
+      const isMobile = (this.screen.width < 768);
+      this.scale = isMobile ? (this.screen.height / 750) : (this.screen.height / 1500);
       this.plane.scale.y = (this.viewport.height * (680 * this.scale)) / this.screen.height;
       this.plane.scale.x = (this.viewport.width * (520 * this.scale)) / this.screen.width;
       this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
-      this.padding = (this.screen.width < 768) ? 1.0 : 1.7;
+      this.padding = isMobile ? 0.9 : 1.7;
       this.width = this.plane.scale.x + this.padding;
       this.widthTotal = this.width * this.length;
       this.x = this.width * this.index;
