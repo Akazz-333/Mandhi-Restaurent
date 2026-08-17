@@ -3948,194 +3948,218 @@ body.theme-light .btn-fill:hover {
 
 /* --- Smartphones & Small Mobile Viewports (max-width: 640px) --- */
 @media (max-width: 640px) {
-  /* Navigation Topbar Mobile Polish */
-  .topbar {
-    padding: 10px 16px !important;
-  }
-
-  .brand-mini {
-    font-size: 1.2rem !important;
-  }
-
-  /* Hero Section Typography & Spacing */
-  .hero-section {
-    padding-top: 80px !important;
+  /* Section Spacing - Compact & Sleek */
+  .mh-section {
+    padding: 24px 12px !important;
     min-height: auto !important;
-    padding-bottom: 40px !important;
+  }
+
+  .hero-section {
+    padding-top: 60px !important;
+    padding-bottom: 24px !important;
+    min-height: auto !important;
   }
 
   .brand {
-    font-size: clamp(2.4rem, 10vw, 3.8rem) !important;
-    line-height: 1.1 !important;
+    font-size: 2.1rem !important;
+    line-height: 1.15 !important;
   }
 
   .eyebrow {
-    font-size: 0.7rem !important;
-    letter-spacing: 0.12em !important;
+    font-size: 0.65rem !important;
+    letter-spacing: 0.1em !important;
   }
 
   .tagline {
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
-    padding: 0 10px !important;
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    padding: 0 5px !important;
   }
 
   .legend {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 8px !important;
+    gap: 6px !important;
   }
 
   .legend .litem {
-    font-size: 0.8rem !important;
-    padding: 6px 12px !important;
+    font-size: 0.72rem !important;
+    padding: 4px 9px !important;
   }
 
-  /* 3D Circular Gallery Mobile Container */
-  #mh-circular-gallery-wrap {
-    height: 380px !important;
-    margin-top: 15px !important;
-    margin-bottom: 25px !important;
-    border-radius: 14px !important;
-    overflow: visible !important;
-  }
-
-  /* Category Nav Pills Mobile Touch Scroll */
-  .category-nav-container {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+  .section-head h2, .menu-title-stylish {
+    font-size: 1.3rem !important;
+    margin-bottom: 12px !important;
     padding-bottom: 6px !important;
   }
 
+  /* 3D Circular Gallery Mobile Compact */
+  #mh-circular-gallery-wrap {
+    height: 220px !important;
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Category Nav Pills Mini */
+  .category-nav-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 4px !important;
+  }
+
   .category-pills {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    white-space: nowrap !important;
+    gap: 6px !important;
   }
 
-  /* Menu Grid: Single Column on Phones for Clean Cards */
+  .category-pill-item a {
+    padding: 5px 12px !important;
+    font-size: 10.5px !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  /* 2-COLUMN COMPACT MOBILE FOOD GRID (Swiggy/UberEats Native Mobile Style) */
   .menu-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-
-  .card {
-    border-radius: 14px !important;
-  }
-
-  .card-img-wrap {
-    height: 180px !important;
-  }
-
-  .card-body {
-    padding: 14px !important;
-  }
-
-  .card-title {
-    font-size: 1.25rem !important;
-  }
-
-  .card-desc {
-    font-size: 0.85rem !important;
-  }
-
-  /* Booking Section Mobile Optimizations */
-  .booking-selection-bar {
-    grid-template-columns: 1fr !important;
-    flex-direction: column !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
   }
 
-  .booking-field-wrapper {
-    width: 100% !important;
+  .card {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+  }
+
+  .card-img-wrap {
+    height: 115px !important;
+  }
+
+  .card-body {
+    padding: 8px 9px 10px !important;
+  }
+
+  .card-badge {
+    font-size: 8px !important;
+    padding: 2px 5px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .card-title {
+    font-size: 0.92rem !important;
+    margin-bottom: 3px !important;
+    line-height: 1.2 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .card-desc {
+    font-size: 0.73rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 5px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    color: var(--muted) !important;
+  }
+
+  .card-price-row {
+    margin-top: 4px !important;
+    align-items: baseline !important;
+  }
+
+  .card-price-row .price {
+    font-size: 0.95rem !important;
+  }
+
+  .card-price-row .unit {
+    font-size: 0.68rem !important;
+  }
+
+  .card-price-row .view-link {
+    font-size: 0.7rem !important;
+  }
+
+  /* Sleek Compact Mobile Dock Bar */
+  .mh-dock {
+    bottom: 10px !important;
+    padding: 4px 12px !important;
+    gap: 10px !important;
+    border-radius: 30px !important;
+    background: rgba(14, 11, 8, 0.94) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.9) !important;
+  }
+
+  .mh-dock-item {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .mh-dock-item svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  /* Booking & About Sections Compact */
+  .booking-featured-card {
+    padding: 12px !important;
   }
 
   .table-map-grid {
-    transform: scale(0.95) !important;
+    transform: scale(0.8) !important;
     transform-origin: center center !important;
   }
 
-  /* Food Detail Modal Mobile Layout */
-  .detail-card {
-    flex-direction: column !important;
-    max-height: 90vh !important;
-    overflow-y: auto !important;
-    padding: 16px !important;
-    border-radius: 16px !important;
+  .contact-card .border-glow-inner {
+    padding: 14px !important;
   }
 
-  .detail-gallery-col {
-    width: 100% !important;
-    max-height: 250px !important;
+  /* Food Detail Modal Compact Mobile Fit */
+  .detail-card {
+    padding: 12px !important;
+    max-height: 88vh !important;
   }
 
   .detail-main-img-wrap {
-    height: 200px !important;
-  }
-
-  .detail-info-col {
-    width: 100% !important;
-    padding-left: 0 !important;
-    margin-top: 15px !important;
+    height: 160px !important;
   }
 
   .detail-title {
-    font-size: 1.5rem !important;
+    font-size: 1.3rem !important;
   }
 
-  /* About Widgets 1 Column on Mobile */
-  .about-widgets-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
+  .detail-desc {
+    font-size: 0.82rem !important;
   }
 
-  /* Cart Popover Drawer Full Width Mobile */
-  .cart-popover {
-    width: 100vw !important;
-    right: 0 !important;
-  }
-
-  /* AI Assistant Chatbot Window Responsive Fit */
-  .chatbot-window {
-    width: calc(100vw - 24px) !important;
-    right: 12px !important;
-    bottom: 85px !important;
-    height: 70vh !important;
-    max-height: 520px !important;
-    border-radius: 16px !important;
-  }
-
+  /* Floating Robot Assistant Compact Position */
   .robot-container {
-    bottom: 16px !important;
-    right: 16px !important;
+    bottom: 58px !important;
+    right: 10px !important;
   }
 
   .robot-assistant {
-    width: 62px !important;
-    height: 62px !important;
-  }
-
-  .robot-tooltip {
-    display: none !important;
+    width: 48px !important;
+    height: 48px !important;
   }
 }
 
 /* --- Ultra-Compact Phones (max-width: 380px) --- */
 @media (max-width: 380px) {
-  .brand {
-    font-size: 2.1rem !important;
-  }
-
-  .section-head h2 {
-    font-size: 1.6rem !important;
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
   }
 
   .card-img-wrap {
-    height: 150px !important;
+    height: 100px !important;
   }
 
-  .table-map-grid {
-    transform: scale(0.85) !important;
+  .card-title {
+    font-size: 0.85rem !important;
+  }
+
+  .card-desc {
+    display: none !important;
   }
 }
