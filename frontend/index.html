@@ -1492,7 +1492,22 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
     }
   });
 
-  const API_BASE = 'https://mandhi-restaurent-production.up.railway.app';
+  window.API_BASE = 'https://mandhi-restaurent-production.up.railway.app';
+  var API_BASE = window.API_BASE;
+
+  function getGalleryImages(slug) {
+    const knownGallerySlugs = [
+      'chicken-mandi', 'al-fahm-mandi', 'peri-peri-al-fahm-mandi', 
+      'mutton-mandi', 'beef-mandi', 'fish-mandi', 'al-fahm', 
+      'peri-peri-al-fahm', 'green-chilli-al-fahm', 'shawaya-mandi', 
+      'chicken-madfoon', 'mutton-madfoon', 'beef-madfoon', 
+      'grilled-mutton-mandi', 'grilled-beef-mandi'
+    ];
+    if (knownGallerySlugs.includes(slug)) {
+      return [`images/${slug}-1.jpg`, `images/${slug}-2.jpg`, `images/${slug}-3.jpg`];
+    }
+    return ['images/chicken-mandi-1.jpg', 'images/chicken-mandi-2.jpg', 'images/al-fahm.jpg'];
+  }
 
   const RAW_MENU = [
     // --- AL FAHM ---
@@ -1552,7 +1567,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
           ...m,
           slug,
           cardImage: `images/${slug}.jpg`,
-          gallery: [`images/${slug}-1.jpg`, `images/${slug}-2.jpg`, `images/${slug}-3.jpg`],
+          gallery: getGalleryImages(slug),
         };
       });
     } catch (err) {
@@ -1563,7 +1578,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
           ...m,
           slug,
           cardImage: `images/${slug}.jpg`,
-          gallery: [`images/${slug}-1.jpg`, `images/${slug}-2.jpg`, `images/${slug}-3.jpg`],
+          gallery: getGalleryImages(slug),
         };
       });
     }
