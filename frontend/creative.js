@@ -164,6 +164,6 @@
   // Run auto-init on DOMContentLoaded
   window.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
-    initCardStacking();
+    // initCardStacking(); // Disabled to allow natural document flow and scroll-unlock
   });
 })();
