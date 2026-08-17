@@ -1278,10 +1278,33 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
       this.isDown = true;
       this.scroll.position = this.scroll.current;
       this.start = e.touches ? e.touches[0].clientX : e.clientX;
+      this.startY = e.touches ? e.touches[0].clientY : e.clientY;
+      this.hasDecidedDirection = false;
+      this.isVerticalDrag = false;
     }
     onTouchMove(e) {
       if (!this.isDown) return;
       const x = e.touches ? e.touches[0].clientX : e.clientX;
+      const y = e.touches ? e.touches[0].clientY : e.clientY;
+
+      if (!this.hasDecidedDirection) {
+        const diffX = Math.abs(x - this.start);
+        const diffY = Math.abs(y - this.startY);
+        if (diffX > 5 || diffY > 5) {
+          this.hasDecidedDirection = true;
+          if (diffY > diffX) {
+            this.isVerticalDrag = true;
+            this.isDown = false;
+            return;
+          }
+        } else {
+          return;
+        }
+      }
+
+      if (this.isVerticalDrag) return;
+      if (e.cancelable) e.preventDefault();
+
       const distance = (this.start - x) * (this.scrollSpeed * 0.025);
       this.scroll.target = this.scroll.position + distance;
     }
@@ -1290,9 +1313,12 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
       this.onCheck();
     }
     onWheel(e) {
-      const delta = e.deltaY || e.wheelDelta || e.detail;
-      this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
-      this.onCheckDebounce();
+      // Only rotate gallery on horizontal scrollwheel swipes
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        if (e.cancelable) e.preventDefault();
+        this.scroll.target += (e.deltaX > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
+        this.onCheckDebounce();
+      }
     }
     onKeyDown(e) {
       switch (e.key) {
@@ -1390,9 +1416,9 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
       this.container.addEventListener('mousedown', this.boundOnTouchDown);
       window.addEventListener('mousemove', this.boundOnTouchMove);
       window.addEventListener('mouseup', this.boundOnTouchUp);
-      this.container.addEventListener('touchstart', this.boundOnTouchDown);
-      window.addEventListener('touchmove', this.boundOnTouchMove);
-      window.addEventListener('touchend', this.boundOnTouchUp);
+      this.container.addEventListener('touchstart', this.boundOnTouchDown, { passive: true });
+      this.container.addEventListener('touchmove', this.boundOnTouchMove, { passive: false });
+      window.addEventListener('touchend', this.boundOnTouchUp, { passive: true });
       this.container.addEventListener('click', this.boundOnClick);
       this.container.addEventListener('keydown', this.boundOnKeyDown);
     }
