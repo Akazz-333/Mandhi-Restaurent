@@ -3972,6 +3972,26 @@ body.theme-light .btn-fill:hover {
     transform: none !important;
   }
 
+  #sec-showcase {
+    display: block !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 10px 0 !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  #mh-circular-gallery-wrap {
+    height: 320px !important;
+    margin: 10px auto !important;
+    border: none !important;
+    background: transparent !important;
+    overflow: hidden !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   .reveal-hidden {
     opacity: 1 !important;
     transform: none !important;
