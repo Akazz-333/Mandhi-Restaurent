@@ -3083,8 +3083,8 @@ body.theme-emerald {
 }
 
 .robot-assistant {
-  width: 75px;
-  height: 75px;
+  width: 110px;
+  height: 110px;
   background: transparent;
   border: none;
   border-radius: 0;
@@ -4195,8 +4195,8 @@ body.theme-light .btn-fill:hover {
   }
 
   .robot-assistant {
-    width: 70px !important;
-    height: 70px !important;
+    width: 95px !important;
+    height: 95px !important;
   }
 
   /* Hide distracting text tooltip on mobile so it never overlaps dock bar */
