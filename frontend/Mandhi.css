@@ -1731,10 +1731,9 @@ body.theme-emerald {
   width: 100%;
   max-width: 1440px;
   flex: 1;
-  overflow-y: auto;
+  overflow: visible;
   scrollbar-width: none; /* Firefox */
   padding-bottom: 80px;
-  overscroll-behavior-y: contain;
 }
 #sec-menu #mh-menu-grid::-webkit-scrollbar {
   display: none; /* Safari/Chrome */
