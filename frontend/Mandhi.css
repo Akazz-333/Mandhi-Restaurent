@@ -4005,13 +4005,18 @@ body.theme-light .btn-fill:hover {
    WORLD-CLASS PROFESSIONAL MOBILE RESPONSIVE DESIGN SYSTEM
    ========================================================= */
 @media (max-width: 768px) {
-  /* 1. Global Touch & Scroll */
-  html, body, #mandhi-root, .wrap {
-    overflow-x: hidden !important;
+  html {
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  body {
+    height: 100% !important;
     overflow-y: auto !important;
-    scroll-snap-type: none !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: none !important;
     -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-y !important;
+  }
+  #mandhi-root, .wrap {
     overscroll-behavior: none !important;
   }
 
