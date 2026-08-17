@@ -1,0 +1,1 @@
+web: java -Xms64m -Xmx256m -XX:+UseG1GC -Dserver.port=${PORT:-8080} -jar target/*.jar
