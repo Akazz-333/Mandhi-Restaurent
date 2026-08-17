@@ -67,10 +67,7 @@
 
       <section id="sec-showcase" class="mh-section reveal-hidden">
         <div class="section-content-wrap">
-          <div class="section-head animate-text">
-            <h2 class="menu-title-stylish">The Menu</h2>
-          </div>
-          <div id="mh-circular-gallery-wrap" class="animate-image" style="height: 400px; position: relative; margin-top: 30px; margin-bottom: 20px; border-radius: 18px; overflow: hidden; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-soft);">
+          <div id="mh-circular-gallery-wrap" class="animate-image" style="height: 400px; position: relative; margin-top: 10px; margin-bottom: 20px; overflow: hidden;">
             <div id="circular-gallery" class="circular-gallery"></div>
           </div>
         </div>
@@ -78,6 +75,9 @@
 
       <section id="sec-menu" class="mh-section reveal-hidden">
         <div class="section-content-wrap">
+          <div class="section-head animate-text" style="text-align: center; margin-bottom: 20px;">
+            <h2 class="menu-title-stylish">The Menu</h2>
+          </div>
           <div class="mh-category-tabs-container animate-text" style="margin-bottom: 30px;">
             <div class="category-nav-container" id="mh-category-nav">
               <ul id="mh-category-nav-list" class="category-pills">
@@ -1460,9 +1460,11 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
   document.addEventListener('DOMContentLoaded', () => {
     initTextReveal();
     initSectionObserver();
-    setTimeout(() => {
-      document.getElementById('sec-hero')?.classList.add('reveal-active');
-    }, 150);
+    // Force reveal all sections immediately on DOMContentLoaded so nothing is ever hidden
+    document.querySelectorAll('.mh-section').forEach(sec => {
+      sec.classList.add('reveal-active');
+      sec.classList.add('section-entered');
+    });
     const container = document.getElementById('circular-gallery');
     if (container) {
       const items = [
@@ -1554,35 +1556,42 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
   // photos for the detail page (images/<slug>-1.jpg, -2.jpg, -3.jpg).
   // Drop matching files into an "images" folder next to this HTML file —
   // until then, a placeholder card is shown automatically.
-  let MENU = [];
+  // Pre-populate MENU with local items so it renders INSTANTLY in 0ms
+  let MENU = RAW_MENU.map(m => {
+    const slug = slugify(m.name);
+    return {
+      ...m,
+      slug,
+      cardImage: `images/${slug}.jpg`,
+      gallery: getGalleryImages(slug),
+    };
+  });
 
   async function loadMenu() {
+    // 1. Render instant local menu immediately
+    renderMenu();
+
+    // 2. Fetch latest live menu from backend API in background
     try {
       const response = await fetch(API_BASE + '/api/menu');
-      if (!response.ok) throw new Error("API error");
-      const rawMenu = await response.json();
-      MENU = rawMenu.map(m => {
-        const slug = slugify(m.name);
-        return {
-          ...m,
-          slug,
-          cardImage: `images/${slug}.jpg`,
-          gallery: getGalleryImages(slug),
-        };
-      });
+      if (response.ok) {
+        const rawMenu = await response.json();
+        if (Array.isArray(rawMenu) && rawMenu.length > 0) {
+          MENU = rawMenu.map(m => {
+            const slug = slugify(m.name);
+            return {
+              ...m,
+              slug,
+              cardImage: `images/${slug}.jpg`,
+              gallery: getGalleryImages(slug),
+            };
+          });
+          renderMenu();
+        }
+      }
     } catch (err) {
-      console.error("Failed to load menu from API, using local fallback:", err);
-      MENU = RAW_MENU.map(m => {
-        const slug = slugify(m.name);
-        return {
-          ...m,
-          slug,
-          cardImage: `images/${slug}.jpg`,
-          gallery: getGalleryImages(slug),
-        };
-      });
+      console.warn("Backend API sync offline, running on instant local menu:", err);
     }
-    renderMenu();
   }
 
   const TYPES = {
