@@ -3152,7 +3152,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
         table.style.transition = 'all 0.5s ease';
 
         try {
-          const res = await fetch(`/api/bookings/availability?tableId=${encodeURIComponent(tableId)}&date=${encodeURIComponent(dateString)}&time=${encodeURIComponent(timeString)}`);
+          const res = await fetch(`${API_BASE}/api/bookings/availability?tableId=${encodeURIComponent(tableId)}&date=${encodeURIComponent(dateString)}&time=${encodeURIComponent(timeString)}`);
           if (!res.ok) throw new Error();
           const status = await res.text();
 
@@ -4507,7 +4507,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
         setTimeout(async () => {
           appendMessage('bot', `🔍 Searching for order **${orderId}**...`);
           try {
-            const res = await fetch(`/api/orders/number/${orderId}`);
+            const res = await fetch(`${API_BASE}/api/orders/number/${orderId}`);
             if (res.ok) {
               const orderData = await res.json();
               loadOrderIntoTelemetry(orderData);
@@ -4581,7 +4581,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
 
       try {
         showToastNotification("Searching for order...");
-        const res = await fetch(`/api/orders/number/${orderNumber}`);
+        const res = await fetch(`${API_BASE}/api/orders/number/${orderNumber}`);
         if (!res.ok) {
           showToastNotification("No active order found.");
           return;
@@ -4730,7 +4730,7 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
           searchInput.value = lastId;
         }
         try {
-          const res = await fetch(`/api/orders/number/${lastId}`);
+          const res = await fetch(`${API_BASE}/api/orders/number/${lastId}`);
           if (res.ok) {
             const orderData = await res.json();
             loadOrderIntoTelemetry(orderData);
