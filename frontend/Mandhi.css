@@ -4211,6 +4211,22 @@ body.theme-light .btn-fill:hover {
     display: none !important;
   }
 
+  /* 8.5 About Section Widgets & Cards Layout */
+  .about-widgets-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  #sec-about .contact-card .border-glow-inner {
+    padding: 22px 18px !important;
+  }
+  #sec-about .about-text {
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+  }
+  #sec-about .serif.booking-main-title {
+    font-size: 24px !important;
+  }
+
   /* 9. AI Chatbot Window Mobile Bottom Sheet Popup */
   .chatbot-window {
     position: fixed !important;
