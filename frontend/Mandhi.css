@@ -493,16 +493,16 @@ html {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin: 50px 0 22px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border-soft);
+  margin: 20px 0 16px;
+  padding-bottom: 0;
+  border-bottom: none !important;
 }
 .section-head h2 { font-size: 26px; }
 .section-head > span { font-size: 12px; color: var(--muted); }
 
 /* Stylish Shimmering Heading */
 #sec-showcase .section-head {
-  border-bottom: none;
+  border-bottom: none !important;
   justify-content: center;
   margin-bottom: 5px;
   padding-bottom: 0;
