@@ -1583,7 +1583,7 @@ body.theme-emerald {
   .mh-category-tabs-container .mh-search {
     position: absolute !important;
     right: 0 !important;
-    top: 50% !important;
+    top: calc(50% + 4px) !important;
     transform: translateY(-50%) !important;
     margin: 0 !important;
     z-index: 20 !important;
@@ -1595,7 +1595,7 @@ body.theme-emerald {
     right: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    top: 50% !important;
+    top: calc(50% + 4px) !important;
     transform: translateY(-50%) !important;
     z-index: 30 !important;
   }
