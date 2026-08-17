@@ -1092,6 +1092,10 @@
 
   <!-- SCRIPTS -->
   <script>
+    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? ''
+      : 'https://mandhi-restaurent-production.up.railway.app';
+
     let activeSection = 'dashboard';
     let rawOrders = [];
     let currentFilterStatus = 'ALL';
@@ -1187,7 +1191,7 @@
       resultText.textContent = "Pinging API controller...";
       const startTime = performance.now();
       try {
-        const res = await fetch('/api/orders/active');
+        const res = await fetch(API_BASE + '/api/orders/active');
         if (res.ok) {
           const endTime = performance.now();
           const latency = Math.round(endTime - startTime);
@@ -1239,7 +1243,7 @@
       };
       
       try {
-        const res = await fetch('/api/orders', {
+        const res = await fetch(API_BASE + '/api/orders', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
@@ -1261,11 +1265,11 @@
       const syncStatusDot = document.getElementById('sync-status-dot');
       try {
         // Fetch Reservations
-        const resBookings = await fetch('/api/bookings');
+        const resBookings = await fetch(API_BASE + '/api/bookings');
         const bookings = await resBookings.json();
 
         // Fetch Orders
-        const resOrders = await fetch('/api/orders');
+        const resOrders = await fetch(API_BASE + '/api/orders');
         rawOrders = await resOrders.json();
 
         syncStatusDot.className = 'sync-dot';
@@ -1314,7 +1318,7 @@
       if (!tableBody) return;
 
       try {
-        const res = await fetch('/api/feedbacks');
+        const res = await fetch(API_BASE + '/api/feedbacks');
         if (!res.ok) throw new Error("Server error");
         const feedbacks = await res.json();
         
@@ -1381,7 +1385,7 @@
     async function handleDeleteFeedback(id) {
       if (!confirm("Are you sure you want to delete this feedback entry?")) return;
       try {
-        const res = await fetch(`/api/feedbacks/${id}`, {
+        const res = await fetch(`${API_BASE}/api/feedbacks/${id}`, {
           method: 'DELETE'
         });
         if (res.ok) {
@@ -1546,7 +1550,7 @@
     // Trigger order status change update
     async function updateStatus(orderId, status) {
       try {
-        const response = await fetch(`/api/orders/${orderId}/status?status=${status}`, {
+        const response = await fetch(`${API_BASE}/api/orders/${orderId}/status?status=${status}`, {
           method: 'PUT'
         });
         if (response.ok) {
@@ -1567,7 +1571,7 @@
 
       try {
         // Fetch Daily Summary Metrics
-        const resSummary = await fetch(`/api/orders/summary?date=${dateVal}`);
+        const resSummary = await fetch(`${API_BASE}/api/orders/summary?date=${dateVal}`);
         if (!resSummary.ok) throw new Error("Summary API failed");
         const summary = await resSummary.json();
 
@@ -1579,7 +1583,7 @@
         document.getElementById('analytics-most-ordered').textContent = summary.mostOrderedItem;
 
         // Fetch Individual Orders Log
-        const resOrders = await fetch(`/api/orders/date/${dateVal}`);
+        const resOrders = await fetch(`${API_BASE}/api/orders/date/${dateVal}`);
         if (!resOrders.ok) throw new Error("Date Orders API failed");
         const orders = await resOrders.json();
 
@@ -1637,7 +1641,7 @@
     async function renderAllCharts() {
       // 1. Render Sales Chart
       try {
-        const resRevenue = await fetch('/api/analytics/revenue');
+        const resRevenue = await fetch(API_BASE + '/api/analytics/revenue');
         const revenueMap = await resRevenue.json();
         
         const dates = Object.keys(revenueMap).slice(-7); // last 7 days
@@ -1682,7 +1686,7 @@
 
       // 2. Render Dish Popularity Chart
       try {
-        const resDist = await fetch('/api/analytics/orders-distribution');
+        const resDist = await fetch(API_BASE + '/api/analytics/orders-distribution');
         const distMap = await resDist.json();
         
         const dishes = Object.keys(distMap);
@@ -1720,7 +1724,7 @@
 
       // 3. Render Bookings Bar Chart
       try {
-        const resBookings = await fetch('/api/analytics/bookings-per-day');
+        const resBookings = await fetch(API_BASE + '/api/analytics/bookings-per-day');
         const bookingsMap = await resBookings.json();
 
         const dates = Object.keys(bookingsMap).slice(-7);
