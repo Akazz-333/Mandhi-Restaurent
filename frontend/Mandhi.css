@@ -3948,104 +3948,120 @@ body.theme-light .btn-fill:hover {
 
 /* --- Smartphones & Small Mobile Viewports (max-width: 640px) --- */
 @media (max-width: 640px) {
-  /* Section Spacing - Compact & Sleek */
+  /* Hide heavy 3D Showcase section on mobile so menu is immediately visible */
+  #sec-showcase {
+    display: none !important;
+  }
+
+  /* Section Spacing - Ultra-Compact & Clean */
   .mh-section {
-    padding: 24px 12px !important;
+    padding: 16px 10px !important;
     min-height: auto !important;
   }
 
   .hero-section {
-    padding-top: 60px !important;
-    padding-bottom: 24px !important;
+    padding-top: 50px !important;
+    padding-bottom: 16px !important;
     min-height: auto !important;
   }
 
   .brand {
-    font-size: 2.1rem !important;
-    line-height: 1.15 !important;
+    font-size: 1.95rem !important;
+    line-height: 1.1 !important;
   }
 
   .eyebrow {
-    font-size: 0.65rem !important;
-    letter-spacing: 0.1em !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.08em !important;
   }
 
   .tagline {
-    font-size: 0.85rem !important;
-    line-height: 1.4 !important;
-    padding: 0 5px !important;
+    font-size: 0.8rem !important;
+    line-height: 1.35 !important;
+    padding: 0 4px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .divider-wrap svg {
+    width: 160px !important;
+    height: 16px !important;
   }
 
   .legend {
-    gap: 6px !important;
+    gap: 4px !important;
   }
 
   .legend .litem {
-    font-size: 0.72rem !important;
-    padding: 4px 9px !important;
+    font-size: 0.68rem !important;
+    padding: 3px 8px !important;
   }
 
   .section-head h2, .menu-title-stylish {
-    font-size: 1.3rem !important;
-    margin-bottom: 12px !important;
-    padding-bottom: 6px !important;
-  }
-
-  /* 3D Circular Gallery Mobile Compact */
-  #mh-circular-gallery-wrap {
-    height: 220px !important;
-    margin-top: 10px !important;
-    margin-bottom: 15px !important;
-    border-radius: 10px !important;
-  }
-
-  /* Category Nav Pills Mini */
-  .category-nav-container {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+    font-size: 1.15rem !important;
+    margin-bottom: 8px !important;
     padding-bottom: 4px !important;
   }
 
+  /* Category Nav Pills & Search Bar Mini */
+  .mh-category-tabs-container {
+    margin: 8px auto 14px !important;
+    gap: 8px !important;
+  }
+
+  .category-nav-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 2px !important;
+  }
+
   .category-pills {
-    gap: 6px !important;
+    gap: 4px !important;
   }
 
   .category-pill-item a {
-    padding: 5px 12px !important;
-    font-size: 10.5px !important;
-    letter-spacing: 0.02em !important;
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+    letter-spacing: 0.01em !important;
   }
 
-  /* 2-COLUMN COMPACT MOBILE FOOD GRID (Swiggy/UberEats Native Mobile Style) */
+  .mh-search-inner {
+    padding: 4px 10px !important;
+  }
+
+  .mh-search-inner input {
+    font-size: 11.5px !important;
+  }
+
+  /* 2-COLUMN COMPACT MOBILE FOOD GRID (Native Food App Style) */
   .menu-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
+    gap: 8px !important;
   }
 
   .card {
-    border-radius: 10px !important;
+    border-radius: 8px !important;
     overflow: hidden !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5) !important;
   }
 
   .card-img-wrap {
-    height: 115px !important;
+    height: 95px !important;
   }
 
   .card-body {
-    padding: 8px 9px 10px !important;
+    padding: 6px 8px 8px !important;
   }
 
   .card-badge {
-    font-size: 8px !important;
-    padding: 2px 5px !important;
-    margin-bottom: 3px !important;
+    font-size: 7.5px !important;
+    padding: 1px 4px !important;
+    margin-bottom: 2px !important;
   }
 
   .card-title {
-    font-size: 0.92rem !important;
-    margin-bottom: 3px !important;
-    line-height: 1.2 !important;
+    font-size: 0.85rem !important;
+    margin-bottom: 2px !important;
+    line-height: 1.15 !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 1 !important;
     -webkit-box-orient: vertical !important;
@@ -4053,94 +4069,94 @@ body.theme-light .btn-fill:hover {
   }
 
   .card-desc {
-    font-size: 0.73rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 5px !important;
+    font-size: 0.68rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 4px !important;
     display: -webkit-box !important;
-    -webkit-line-clamp: 2 !important;
+    -webkit-line-clamp: 1 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
     color: var(--muted) !important;
   }
 
   .card-price-row {
-    margin-top: 4px !important;
+    margin-top: 2px !important;
     align-items: baseline !important;
   }
 
   .card-price-row .price {
-    font-size: 0.95rem !important;
+    font-size: 0.88rem !important;
   }
 
   .card-price-row .unit {
-    font-size: 0.68rem !important;
+    font-size: 0.62rem !important;
   }
 
   .card-price-row .view-link {
-    font-size: 0.7rem !important;
+    font-size: 0.65rem !important;
   }
 
-  /* Sleek Compact Mobile Dock Bar */
+  /* Sleek Compact Mobile Bottom Dock Bar */
   .mh-dock {
-    bottom: 10px !important;
-    padding: 4px 12px !important;
-    gap: 10px !important;
+    bottom: 8px !important;
+    padding: 3px 10px !important;
+    gap: 8px !important;
     border-radius: 30px !important;
-    background: rgba(14, 11, 8, 0.94) !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.9) !important;
+    background: rgba(14, 11, 8, 0.95) !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.9) !important;
   }
 
   .mh-dock-item {
-    width: 36px !important;
-    height: 36px !important;
+    width: 32px !important;
+    height: 32px !important;
   }
 
   .mh-dock-item svg {
-    width: 15px !important;
-    height: 15px !important;
+    width: 14px !important;
+    height: 14px !important;
   }
 
   /* Booking & About Sections Compact */
   .booking-featured-card {
-    padding: 12px !important;
+    padding: 10px !important;
   }
 
   .table-map-grid {
-    transform: scale(0.8) !important;
+    transform: scale(0.75) !important;
     transform-origin: center center !important;
   }
 
   .contact-card .border-glow-inner {
-    padding: 14px !important;
+    padding: 10px !important;
   }
 
   /* Food Detail Modal Compact Mobile Fit */
   .detail-card {
-    padding: 12px !important;
-    max-height: 88vh !important;
+    padding: 10px !important;
+    max-height: 85vh !important;
   }
 
   .detail-main-img-wrap {
-    height: 160px !important;
+    height: 140px !important;
   }
 
   .detail-title {
-    font-size: 1.3rem !important;
+    font-size: 1.15rem !important;
   }
 
   .detail-desc {
-    font-size: 0.82rem !important;
+    font-size: 0.78rem !important;
   }
 
   /* Floating Robot Assistant Compact Position */
   .robot-container {
-    bottom: 58px !important;
-    right: 10px !important;
+    bottom: 50px !important;
+    right: 8px !important;
   }
 
   .robot-assistant {
-    width: 48px !important;
-    height: 48px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
 }
 
@@ -4148,15 +4164,15 @@ body.theme-light .btn-fill:hover {
 @media (max-width: 380px) {
   .menu-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px !important;
+    gap: 6px !important;
   }
 
   .card-img-wrap {
-    height: 100px !important;
+    height: 85px !important;
   }
 
   .card-title {
-    font-size: 0.85rem !important;
+    font-size: 0.8rem !important;
   }
 
   .card-desc {
