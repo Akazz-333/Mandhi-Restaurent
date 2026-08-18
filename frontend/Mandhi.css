@@ -4001,6 +4001,448 @@ body.theme-light .btn-fill:hover {
 }
 
 /* =========================================================
+   NEW SECTIONS: OFFERS, REVIEWS, CHEFS, FAQS
+   ========================================================= */
+
+/* 1. Offers Section (.mh-offers-section) */
+.mh-offers-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, rgba(21, 18, 14, 0.2), rgba(21, 18, 14, 0.8));
+}
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+}
+.offer-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 35px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.offer-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--clay));
+  opacity: 0.7;
+}
+.offer-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(201, 151, 43, 0.3);
+  box-shadow: 0 12px 30px rgba(201, 151, 43, 0.1);
+}
+.offer-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(201, 151, 43, 0.15);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  margin-bottom: 15px;
+}
+.offer-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--cream);
+  margin: 0 0 10px;
+}
+.offer-card p {
+  font-size: 13px;
+  color: var(--cream-dim);
+  margin: 0 0 20px;
+}
+.promo-code-box {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed rgba(201, 151, 43, 0.4);
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.promo-code-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+}
+.btn-copy-code {
+  background: var(--gold);
+  border: none;
+  color: #15120e;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-copy-code:hover {
+  background: var(--gold-light);
+  transform: scale(1.05);
+}
+.btn-copy-code.copied {
+  background: #2e7d32 !important;
+  color: #fff !important;
+}
+
+/* 2. Reviews Section (.mh-reviews-section) */
+.mh-reviews-section {
+  padding: 80px 0;
+  background: rgba(21, 18, 14, 0.4);
+  overflow: hidden;
+  position: relative;
+}
+.reviews-slider-container {
+  max-width: 800px;
+  margin: 40px auto 0;
+  position: relative;
+  padding: 0 50px;
+}
+.reviews-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.reviews-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 100%;
+}
+.review-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.review-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+}
+.review-stars {
+  color: var(--gold);
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+.review-stars svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+.review-card:hover .review-stars svg {
+  transform: scale(1.15) rotate(5deg);
+}
+.review-content {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--cream);
+  font-style: italic;
+  margin-bottom: 25px;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: rgba(255, 255, 255, 0.05);
+  object-fit: cover;
+  display: block;
+}
+.review-author-info {
+  text-align: left;
+}
+.review-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--cream);
+  margin: 0;
+}
+.review-role {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 2px 0 0;
+}
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+.slider-arrow:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #15120e;
+}
+.slider-arrow.arrow-prev { left: 0; }
+.slider-arrow.arrow-next { right: 0; }
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.slider-dot.active {
+  background: var(--gold);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* 3. Meet Our Chefs Section (.mh-chefs-section) */
+.mh-chefs-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, rgba(21, 18, 14, 0.8), rgba(21, 18, 14, 0.2));
+}
+.chefs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+.chef-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chef-image-wrap {
+  width: 100%;
+  aspect-ratio: 4/5;
+  position: relative;
+  overflow: hidden;
+  background: rgba(0,0,0,0.1);
+}
+.chef-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chef-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(21, 18, 14, 0) 40%, rgba(21, 18, 14, 0.95));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+.chef-dish-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(21, 18, 14, 0.95);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chef-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(201, 151, 43, 0.25);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+.chef-card:hover .chef-image-wrap img {
+  transform: scale(1.08);
+}
+.chef-card:hover .chef-dish-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+.chef-role-tag {
+  align-self: flex-start;
+  padding: 4px 10px;
+  background: var(--gold);
+  color: #15120e;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.chef-overlay h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--cream);
+  margin: 0;
+}
+.chef-overlay .specialty {
+  font-size: 12px;
+  color: var(--gold-light);
+  margin: 4px 0 0;
+}
+.chef-dish-overlay h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--gold-light);
+  margin: 0 0 8px;
+}
+.chef-dish-overlay p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--cream-dim);
+  margin: 0 0 15px;
+}
+.chef-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--cream);
+  margin: 15px 0;
+  line-height: 1.4;
+}
+.chef-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+.chef-socials a {
+  color: var(--cream-dim);
+  transition: color 0.2s ease;
+}
+.chef-socials a:hover {
+  color: var(--gold);
+}
+
+/* 4. FAQ Section (.mh-faq-section) */
+.mh-faq-section {
+  padding: 80px 0;
+  background: rgba(21, 18, 14, 0.3);
+}
+.faq-container {
+  max-width: 800px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 20px;
+}
+.faq-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.faq-header {
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+.faq-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+.faq-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cream);
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 0.01em;
+}
+.faq-icon-wrap {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-icon-wrap svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.2;
+}
+.faq-content-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-content-inner {
+  overflow: hidden;
+}
+.faq-content-text {
+  padding: 0 28px 24px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  margin: 0;
+}
+.faq-item.active {
+  border-color: rgba(201, 151, 43, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+}
+.faq-item.active .faq-icon-wrap {
+  transform: rotate(180deg);
+}
+.faq-item.active .faq-content-panel {
+  grid-template-rows: 1fr;
+}
+
 /* =========================================================
    WORLD-CLASS PROFESSIONAL MOBILE RESPONSIVE DESIGN SYSTEM
    ========================================================= */
@@ -4339,6 +4781,63 @@ body.theme-light .btn-fill:hover {
   .suggestion-pill {
     font-size: 11px !important;
     padding: 4px 10px !important;
+  }
+
+  /* Mobile styles for 4 new sections */
+  .mh-offers-section, .mh-reviews-section, .mh-chefs-section, .mh-faq-section {
+    padding: 50px 0 !important;
+  }
+  .offers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .offer-card {
+    padding: 24px 20px !important;
+  }
+  .reviews-slider-container {
+    padding: 0 16px !important;
+  }
+  .review-card {
+    padding: 24px !important;
+  }
+  .review-content {
+    font-size: 1.2rem !important;
+    line-height: 1.5 !important;
+  }
+  .slider-arrow {
+    display: none !important; /* Touch swipe and dots are sufficient for mobile */
+  }
+  .chefs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .chef-dish-overlay {
+    opacity: 1 !important; /* Visible on mobile */
+    transform: translateY(0) !important;
+    background: rgba(21, 18, 14, 0.85) !important;
+    padding: 20px !important;
+    justify-content: flex-end !important;
+  }
+  .chef-dish-overlay p {
+    font-size: 11.5px !important;
+    margin-bottom: 8px !important;
+  }
+  .chef-quote {
+    font-size: 0.95rem !important;
+    margin: 8px 0 !important;
+  }
+  .faq-container {
+    gap: 10px !important;
+  }
+  .faq-header {
+    padding: 16px 20px !important;
+  }
+  .faq-header h3 {
+    font-size: 13.5px !important;
+  }
+  .faq-content-text {
+    padding: 0 20px 16px !important;
+    font-size: 12px !important;
   }
 }
 

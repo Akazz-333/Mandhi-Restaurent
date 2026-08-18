@@ -6,7 +6,7 @@
 <title>Mandhi House — Order Online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="Mandhi.css?v=1.1.3">
+<link rel="stylesheet" href="Mandhi.css?v=1.1.4">
 <style>
   @media (max-width: 768px) {
     html {
@@ -203,7 +203,46 @@
         </div>
       </section>
 
-      <!-- SECTION 4: BOOK A TABLE -->
+      <!-- SECTION 4: EXCLUSIVE FEAST OFFERS [NEW] -->
+      <section id="sec-offers" class="mh-section reveal-hidden mh-offers-section">
+        <div class="section-content-wrap">
+          <div class="section-head animate-text" style="text-align: center; margin-bottom: 20px;">
+            <h2 class="menu-title-stylish" style="font-size: 2rem;">Exclusive Feast Offers</h2>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 5px;">Copy code and apply during checkout or phone order for special savings</p>
+          </div>
+          <div class="offers-grid animate-image">
+            <div class="offer-card">
+              <span class="offer-badge">Welcome Offer</span>
+              <h3>Get 15% OFF</h3>
+              <p>On your first online order. Experience slow-cooked subterranean perfection.</p>
+              <div class="promo-code-box">
+                <span class="promo-code-text">MANDHI15</span>
+                <button class="btn-copy-code" onclick="copyPromoCode(this, 'MANDHI15')">Copy</button>
+              </div>
+            </div>
+            <div class="offer-card">
+              <span class="offer-badge">Weekend Special</span>
+              <h3>Free Al Fahm</h3>
+              <p>Order 2 Full Mandhi platters and get a half portion of Turkish Al Fahm free.</p>
+              <div class="promo-code-box">
+                <span class="promo-code-text">FREEALFAHM</span>
+                <button class="btn-copy-code" onclick="copyPromoCode(this, 'FREEALFAHM')">Copy</button>
+              </div>
+            </div>
+            <div class="offer-card">
+              <span class="offer-badge">Free Delivery</span>
+              <h3>No Delivery Fee</h3>
+              <p>For orders above ₹600. Direct piping-hot delivery within 8km radius.</p>
+              <div class="promo-code-box">
+                <span class="promo-code-text">FREEDEL</span>
+                <button class="btn-copy-code" onclick="copyPromoCode(this, 'FREEDEL')">Copy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: BOOK A TABLE -->
       <section id="sec-booking" class="mh-section reveal-hidden">
         <div class="section-content-wrap">
           <div class="booking-section-container">
@@ -413,7 +452,94 @@
         </div>
       </section>
 
-      <!-- SECTION 5: LIVE PIT TELEMETRY -->
+      <!-- SECTION 6: GUEST TESTIMONIALS [NEW] -->
+      <section id="sec-reviews" class="mh-section reveal-hidden mh-reviews-section">
+        <div class="section-content-wrap">
+          <div class="section-head animate-text" style="text-align: center; margin-bottom: 20px;">
+            <h2 class="serif booking-main-title" style="margin-bottom: 5px; font-size: 28px;">Guest Experiences</h2>
+            <p style="color: var(--gold-light); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">True voices of our culinary patrons</p>
+          </div>
+          
+          <div class="reviews-slider-container animate-image">
+            <button class="slider-arrow arrow-prev" onclick="moveReviewsSlider(-1)" aria-label="Previous Review">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="slider-arrow arrow-next" onclick="moveReviewsSlider(1)" aria-label="Next Review">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <div class="reviews-wrapper">
+              <div class="reviews-track" id="reviews-track">
+                <div class="review-slide">
+                  <div class="review-card">
+                    <div class="review-stars">
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="review-content">"The smoky depth of the Al Fahm Chicken here is unparalleled. It's incredibly tender, aromatic, and perfectly spiced. Hands down the best Mandhi house in Kochi!"</p>
+                    <div class="review-author">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100&h=100" alt="Rahul Nair" class="review-avatar" />
+                      <div class="review-author-info">
+                        <h4 class="review-name">Rahul Nair</h4>
+                        <p class="review-role">Local Guide & Food Blogger</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review-slide">
+                  <div class="review-card">
+                    <div class="review-stars">
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="review-content">"The interactive telemetry that updates live as they roast the meat in the pit is such an awesome, immersive touch. And the flavor is absolutely authentic."</p>
+                    <div class="review-author">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100" alt="Ananya K." class="review-avatar" />
+                      <div class="review-author-info">
+                        <h4 class="review-name">Ananya K.</h4>
+                        <p class="review-role">Patron & Regular Guest</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review-slide">
+                  <div class="review-card">
+                    <div class="review-stars">
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                      <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="review-content">"Extremely tender meat, flavorful rice, and top-tier hospitality. They really understand spice balances and the art of traditional slow roasting."</p>
+                    <div class="review-author">
+                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=100&h=100" alt="Fahad Shah" class="review-avatar" />
+                      <div class="review-author-info">
+                        <h4 class="review-name">Fahad Shah</h4>
+                        <p class="review-role">Catering Expert</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slider-dots" id="reviews-dots">
+              <span class="slider-dot active" onclick="setReviewSlide(0)"></span>
+              <span class="slider-dot" onclick="setReviewSlide(1)"></span>
+              <span class="slider-dot" onclick="setReviewSlide(2)"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: LIVE PIT TELEMETRY -->
       <section id="sec-telemetry" class="mh-section reveal-hidden">
         <div class="section-content-wrap">
           <!-- Active Tracking ID Banner -->
@@ -546,7 +672,73 @@
         </div>
       </section>
 
-      <!-- SECTION 6: OUR STORY & LOCATION -->
+      <!-- SECTION 8: CULINARY ARTISTS [NEW] -->
+      <section id="sec-chefs" class="mh-section reveal-hidden mh-chefs-section">
+        <div class="section-content-wrap">
+          <div class="section-head animate-text" style="text-align: center; margin-bottom: 20px;">
+            <h2 class="serif booking-main-title" style="margin-bottom: 5px; font-size: 28px;">Masters of Fire & Spice</h2>
+            <p style="color: var(--gold-light); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Meet the hands behind the subterranean craft</p>
+          </div>
+          <div class="chefs-grid animate-image">
+            <div class="chef-card">
+              <div class="chef-image-wrap">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=350&h=440" alt="Chef Yusuf" />
+                <div class="chef-overlay">
+                  <span class="chef-role-tag">Executive Chef</span>
+                  <h3>Chef Yusuf Al-Mansoori</h3>
+                  <span class="specialty">Heritage Pit Craft</span>
+                </div>
+                <div class="chef-dish-overlay">
+                  <h4>Signature Dish</h4>
+                  <p>Mutton Madfoon Platter</p>
+                  <p class="chef-quote">"True smoke cannot be rushed; it is an age-old whisper of subterranean warmth."</p>
+                  <div class="chef-socials">
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chef-card">
+              <div class="chef-image-wrap">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=350&h=440" alt="Chef Rahman" />
+                <div class="chef-overlay">
+                  <span class="chef-role-tag">Grill Master</span>
+                  <h3>Chef Rahman Khalid</h3>
+                  <span class="specialty">Turkish Al Fahm & Charcoal</span>
+                </div>
+                <div class="chef-dish-overlay">
+                  <h4>Signature Dish</h4>
+                  <p>Peri-Peri Al Fahm Chicken</p>
+                  <p class="chef-quote">"Fire is alive. To cook on charcoal is to master a wild, glowing element."</p>
+                  <div class="chef-socials">
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chef-card">
+              <div class="chef-image-wrap">
+                <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=350&h=440" alt="Chef Sameera" />
+                <div class="chef-overlay">
+                  <span class="chef-role-tag">Spice Chemist</span>
+                  <h3>Chef Sameera Feroz</h3>
+                  <span class="specialty">Cardamom & Saffron Blends</span>
+                </div>
+                <div class="chef-dish-overlay">
+                  <h4>Signature Dish</h4>
+                  <p>Honey Chilly Mandhi Rice</p>
+                  <p class="chef-quote">"Spices must dance in harmony—never overpowering, always complementary."</p>
+                  <div class="chef-socials">
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 9: OUR STORY & LOCATION -->
       <section id="sec-about" class="mh-section reveal-hidden" style="padding-top: 50px; padding-bottom: 50px;">
         <div class="section-content-wrap">
           <!-- About Header -->
@@ -800,6 +992,78 @@
                 </div>
                 
                 <button id="submit-feedback-btn" class="btn-confirm" style="margin-top: 0; width: 100%; padding: 10px 15px; font-size: 12.5px; font-weight: 700;">Submit Review</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 10: FREQUENTLY ASKED QUESTIONS [NEW] -->
+      <section id="sec-faqs" class="mh-section reveal-hidden mh-faq-section">
+        <div class="section-content-wrap">
+          <div class="section-head animate-text" style="text-align: center; margin-bottom: 20px;">
+            <h2 class="serif booking-main-title" style="margin-bottom: 5px; font-size: 28px;">Help Center & FAQ</h2>
+            <p style="color: var(--gold-light); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Everything you need to know about our slow-cooked craft</p>
+          </div>
+          <div class="faq-container animate-text">
+            <div class="faq-item">
+              <div class="faq-header" onclick="toggleFaq(this)">
+                <h3>What makes Mandhi House cooking authentic?</h3>
+                <span class="faq-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
+                </span>
+              </div>
+              <div class="faq-content-panel">
+                <div class="faq-content-inner">
+                  <p class="faq-content-text">
+                    We use a traditional brick-lined underground pit where seasoned acacia and sweet wood smolder slowly. The meats are suspended above spices and rice, allowing the rendered juices to drip down and enrich the basmati rice. No modern ovens can replicate this deep, smoky essence.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-header" onclick="toggleFaq(this)">
+                <h3>Do you offer delivery? What is the radius?</h3>
+                <span class="faq-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
+                </span>
+              </div>
+              <div class="faq-content-panel">
+                <div class="faq-content-inner">
+                  <p class="faq-content-text">
+                    Yes, we offer direct hot-delivery within a 10km radius of our location. You can order directly through our website, track the live pit telemetry queue, or call our order desk. Deliveries are dispatched using insulated boxes to maintain ideal temperature.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-header" onclick="toggleFaq(this)">
+                <h3>Are reservations required for dine-in?</h3>
+                <span class="faq-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
+                </span>
+              </div>
+              <div class="faq-content-panel">
+                <div class="faq-content-inner">
+                  <p class="faq-content-text">
+                    While we accept walk-ins, we highly recommend making a reservation, especially during weekend peak hours (7:30 PM – 9:30 PM). You can easily check real-time table availability and book your seats using our online reservation widget above.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-header" onclick="toggleFaq(this)">
+                <h3>Is all your meat halal and fresh?</h3>
+                <span class="faq-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
+                </span>
+              </div>
+              <div class="faq-content-panel">
+                <div class="faq-content-inner">
+                  <p class="faq-content-text">
+                    Absolutely. 100% of our mutton, chicken, and fish are sourced daily from premium local certified halal suppliers. We never use frozen meats, ensuring the utmost moisture and tenderness in every single slow roast.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -5013,6 +5277,105 @@ import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'http
           });
         });
       }
+
+      // ==========================================
+      // NEW SECTIONS INTERACTION LOGIC
+      // ==========================================
+
+      // 1. Promo Code Copy
+      window.copyPromoCode = (button, code) => {
+        navigator.clipboard.writeText(code).then(() => {
+          const originalText = button.textContent;
+          button.textContent = 'Copied! 🎉';
+          button.classList.add('copied');
+          
+          if (window.triggerRobotHappy) {
+            window.triggerRobotHappy('nod');
+          }
+
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.classList.remove('copied');
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy: ', err);
+          const tempInput = document.createElement('input');
+          tempInput.value = code;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          
+          const originalText = button.textContent;
+          button.textContent = 'Copied! 🎉';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.classList.remove('copied');
+          }, 2000);
+        });
+      };
+
+      // 2. FAQ Accordion Toggle
+      window.toggleFaq = (header) => {
+        const faqItem = header.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      };
+
+      // 3. Guest Reviews Slider
+      let currentReviewSlideIndex = 0;
+      let reviewSlideInterval = null;
+
+      window.moveReviewsSlider = (direction) => {
+        clearInterval(reviewSlideInterval);
+        const slides = document.querySelectorAll('.review-slide');
+        if (slides.length === 0) return;
+        currentReviewSlideIndex = (currentReviewSlideIndex + direction + slides.length) % slides.length;
+        updateReviewSliderPosition();
+        startReviewSliderAutoPlay();
+      };
+
+      window.setReviewSlide = (index) => {
+        clearInterval(reviewSlideInterval);
+        currentReviewSlideIndex = index;
+        updateReviewSliderPosition();
+        startReviewSliderAutoPlay();
+      };
+
+      function updateReviewSliderPosition() {
+        const track = document.getElementById('reviews-track');
+        if (track) {
+          track.style.transform = `translateX(-${currentReviewSlideIndex * 100}%)`;
+        }
+        const dots = document.querySelectorAll('#reviews-dots .slider-dot');
+        dots.forEach((dot, idx) => {
+          if (idx === currentReviewSlideIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      function startReviewSliderAutoPlay() {
+        reviewSlideInterval = setInterval(() => {
+          const slides = document.querySelectorAll('.review-slide');
+          if (slides.length > 0) {
+            currentReviewSlideIndex = (currentReviewSlideIndex + 1) % slides.length;
+            updateReviewSliderPosition();
+          }
+        }, 6000);
+      }
+
+      startReviewSliderAutoPlay();
 
       // Bind selected table into window global for booking use
       window.getSelectedTableId = () => selectedTableId;
